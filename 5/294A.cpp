@@ -5,9 +5,8 @@ using namespace std;
 int main()
 {
 	int n;
+	int a[200];
 	cin >> n;
-
-	int* a = new int[n];
 	for (int i = 1; i <= n; i++) {
 		cin >> a[i];
 	}
@@ -29,8 +28,6 @@ int main()
 	for (int i = 1; i <= n; i++) {
 		cout << a[i] << endl;
 	}
-
-	delete[] a;
 
 	return 0;
 }
