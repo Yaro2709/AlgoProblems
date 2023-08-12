@@ -3,9 +3,9 @@
 using namespace std;
 
 void solve() {
-	int n;
+	long long int n;
 	cin >> n;
-	int x = 0;
+	long long int x = 0;
 	bool flag = 0;
 	for (int i = 1; i <= n; i++) {
 		int p;
