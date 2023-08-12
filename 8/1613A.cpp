@@ -1,44 +1,21 @@
 #include <iostream>
+#include <math.h>
 
 using namespace std;
 
-int main()
-{
-	long long int t;  
+int main() {
+	int t; 
 	cin >> t;
-	while (t--)
-	{
-		long long int x1, x2, p1, p2;
-		cin >> x1 >> p1 >> x2 >> p2;
-
-		long long int p = min(p1, p2);
-
-		p1 -= p;
-		p2 -= p;
-
-		if (p1 >= 7)
-		{
-			cout << ">\n";
-			continue;
-		}
-
-		if (p2 >= 7)
-		{
-			cout << "<\n";
-			continue;
-		}
-
-		x1 *= pow(10, p1);
-		x2 *= pow(10, p2);
-
-		if (x1 > x2)
-			cout << ">\n";
-
-		else if (x1 < x2)
-			cout << "<\n";
-
+	for (int i = 1; i < t + 1; i++) {
+		long long int a, b, c, d, k;
+		cin >> a >> b >> c >> d;
+		k = min(b, d);
+		if ((a * pow(10, b - k)) > (c * pow(10, d - k)))
+			cout << ">" << "\n";
+		else if ((a * pow(10, b - k)) < (c * pow(10, d - k)))
+			cout << "<" << "\n";
 		else
-			cout << "=\n";
+			cout << "=" << "\n";
 	}
 
 	return 0;
