@@ -9,8 +9,8 @@ int main()
     while (t--)
     {
         cin >> n;
-        int *a = new int[n];
-        int sum = 0;
+        long long int *a = new long long int[n];
+        long long int sum = 0;
         for (i = 0; i < n; i++) {
             cin >> a[i];
         }
