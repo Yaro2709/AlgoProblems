@@ -4,8 +4,8 @@ using namespace std;
 
 int main()
 {
-	int n, k, i, s = 0, a = 0, m[100];
-	double f, g;
+	long long int n, k, i, s = 0, a = 0, m[100];
+	long double f, g;
 	cin >> n >> k;
 	for (i = 0; i < n; i++) {
 		cin >> m[i];
@@ -20,5 +20,6 @@ int main()
 		g = (double)(s) / n;
 	}
 	cout << a << endl;
+
 	return 0;
 }
