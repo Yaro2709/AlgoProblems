@@ -4,7 +4,7 @@ using namespace std;
 
 int main() {
 	int n;
-	string a[100], b[100];
+	string a[1000], b[1000];
 	cin >> n;
 	for (int i = 1; i <= n; i++)
 	{
