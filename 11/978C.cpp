@@ -2,35 +2,15 @@
 
 using namespace std;
 
-#define ll long long int
-
-int main()
-{
-	int n, m;
-	cin >> n >> m;
-	ll *a = new ll[n]; 
-	ll *s = new ll[n + 10];
-	for (int i = 1; i <= n; i++) {
-		s[i] = 0;
-	}
-	for (int i = 0; i < n; i++) {
-		cin >> a[i];
-	}
-	for (int i = 1; i <= n; i++) {
-		s[i] = s[i - 1] + a[i - 1];
-	}
-	int p = 1;
-	for (int i = 0; i < m; i++)
-	{
-		ll x;
-		cin >> x;
-		while (x > s[p])
-			p++;
-		cout << p << " " << x - s[p - 1] << "\n";
-	}
-
-	delete[] a;
-	delete[] s;
-
-	return 0;
+int main() {
+    int n, m;
+    cin >> n >> m;
+    long long int i, a[1000000], b[1000000], j = 0, s = 0;
+    for (i = 0; i < n; i++) cin >> a[i];
+    for (i = 0; i < m; i++) {
+        cin >> b[i];
+        while (a[j] + s < b[i]) s += a[j++];
+        cout << j + 1 << " " << b[i] - s << endl;
+    }
+    return 0;
 }
