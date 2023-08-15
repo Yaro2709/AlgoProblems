@@ -2,21 +2,22 @@
 
 using namespace std;
 
-int main() {
-	string a, b;
-	int p = 1, x, y;
-	cin >> a >> b;
-	if (a.length() == b.length()) {
-		for (int i = 0; i < a.length(); i++) {
-			if (a[i] == 'a' || a[i] == 'i' || a[i] == 'u' || a[i] == 'e' || a[i] == 'o') x = 1;
-			else x = 0;
-			if (b[i] == 'a' || b[i] == 'i' || b[i] == 'u' || b[i] == 'e' || b[i] == 'o') y = 1;
-			else y = 0;
-			if (x != y) { p = 0; break; }
-		}
+int main()
+{
+	string s, t;
+	cin >> s >> t;
+	if (s.size() != t.size())
+	{
+		cout << "No";
+		return 0;
 	}
-	else p = 0;
-	if (p) cout << "Yes\n";
+	for (int i = 0; i < s.size(); i++)
+		if (((s[i] == 'a' || s[i] == 'e' || s[i] == 'i' || s[i] == 'o' || s[i] == 'u') && (t[i] != 'a' && t[i] != 'e' && t[i] != 'i' && t[i] != 'o' && t[i] != 'u')) || ((t[i] == 'a' || t[i] == 'e' || t[i] == 'i' || t[i] == 'o' || t[i] == 'u') && (s[i] != 'a' && s[i] != 'e' && s[i] != 'i' && s[i] != 'o' && s[i] != 'u')))
+		{
+			cout << "No";
+			return 0;
+		}
+	cout << "Yes";
 
 	return 0;
 }
