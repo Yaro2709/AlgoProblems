@@ -10,7 +10,7 @@ int main()
     {
         int n;
         cin >> n;
-        long long int a[10000];
+        long long int *a = new long long int[n];
         for (int i = 0; i < n; i++)cin >> a[i];
         long long int cost = a[n - 1];
         for (int i = n - 2; i >= 0; i--)
@@ -19,6 +19,8 @@ int main()
             cost = max(cost, a[i]);
         }
         cout << cost << endl;
+
+        delete[] a;
     }
 
     return 0;
