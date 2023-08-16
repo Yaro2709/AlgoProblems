@@ -40,6 +40,8 @@ int main()
 				cout << "YES\n";
 			}
 		}
+        
+        delete[] a;
 	}
 
 	return 0;
