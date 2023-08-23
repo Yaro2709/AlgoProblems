@@ -2,26 +2,21 @@
 
 using namespace std;
 
-const int N = 1e5 + 1;
-int mn[N];
+int x, y, n, m, k, a[1000];
 
-int main() {
-	int n, m, k;
+int main()
+{
 	cin >> n >> m >> k;
-
-	for (int i = 1; i <= m; i++) {
-		mn[i] = 1e9;
+	for (; x < m; ++x)
+		a[x] = 1e6;
+	while (n--)
+	{
+		cin >> x >> y;
+		a[x - 1] = min(a[x - 1], y);
 	}
-
-	for (int i = 0; i < n; i++) {
-		int a, r; cin >> a >> r;
-		mn[a] = min(mn[a], r);
-	}
-
-	int ans = 0;
-	for (int i = 1; i <= m; i++) {
-		ans += mn[i];
-	}
+	while (m--)
+		n += a[m];
+	cout << min(n + 1, k);
 
 	return 0;
 }
