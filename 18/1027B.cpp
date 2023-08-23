@@ -1,36 +1,27 @@
 #include<iostream>
-#include<math.h>
 
 using namespace std;
 
+#define ll long long int
+
 int main()
 {
-	long long int n, q;
-	cin >> n >> q;
-	while (q--)
-	{
-		int x, y;
-		cin >> x >> y;
-		if (((x + y) % 2) == 0)
-		{
-			long long int ans = 0;
-			ans += ((x - 1) / 2) * n;
-			if (x % 2 == 0)
-				ans += ((n + 1) / 2) + (y / 2);
-			else
-				ans += (y + 1) / 2;
-			cout << ans << "\n";
-		}
-		else
-		{
-			long long int ans = ceil((n * n) / 2.0);
-			ans += ((x - 1) / 2) * n;
-			if (x % 2 == 0)
-				ans += (n / 2) + (y + 1) / 2;
-			else
-				ans += y / 2;
-			cout << ans << "\n";
-		}
-	}
-	return 0;
+    ll n, q;
+    cin >> n >> q;
+    ll r = (n * n + 1) / 2;
+    for (int x = 0; x < q; x++)
+    {
+        int a, b;
+        cin >> a >> b;
+        ll s = (a - 1) * n + b;
+        if ((a + b) % 2 == 0)
+        {
+            cout << (s + 1) / 2 << endl;
+        }
+        else
+        {
+            cout << (r + (s + 1) / 2) << endl;
+        }
+    }
+    return 0;
 }
