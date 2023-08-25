@@ -3,21 +3,21 @@
 using namespace std;
 
 void iluzn() {
-	int n, s;
+	long long int n, s;
 	cin >> n >> s;
-	int *a = new int[n];
-	int sum = 0;
-	for (int i = 0; i < n; i++) {
+	long long int* a = new long long int[n];
+	long long int sum = 0;
+	for (long long int i = 0; i < n; i++) {
 		cin >> a[i];
 		sum += a[i];
 	}
 	if (sum <= s) cout << 0 << "\n";
 	else {
 
-		int ts = 0;
-		int ind = 0;
-		int mx = 0;
-		int ans = 0;
+		long long int ts = 0;
+		long long int ind = 0;
+		long long int mx = 0;
+		long long int ans = 0;
 		while (ind < n && ts <= s) {
 			ts += a[ind];
 			if (mx < a[ind]) {
@@ -33,7 +33,7 @@ void iluzn() {
 }
 
 int main() {
-	int t ;
+	long long int t;
 	cin >> t;
 	while (t--) iluzn();
 
